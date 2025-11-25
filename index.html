@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SCPF Medical Division Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Official hub for the SCPF Medical Division – guidelines, applications, updates, resources, and support."
+  />
+
+  <!-- Favicon using your self-hosted logo -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="/md-logo.png"
+  />
+
+  <!-- Social / embed preview (Discord, iMessage, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SCPF Medical Division Hub" />
+  <meta
+    property="og:description"
+    content="Official hub for the SCPF Medical Division – guidelines, applications, quotas, resources, and support."
+  />
+  <meta property="og:url" content="https://medicaldepartment.org/" />
+  <meta
+    property="og:image"
+    content="https://medicaldepartment.org/md-logo.png"
+  />
+  <meta property="og:image:alt" content="SCPF Medical Division logo" />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SCPF Medical Division Hub" />
+  <meta
+    name="twitter:description"
+    content="Official hub for the SCPF Medical Division – guidelines, applications, quotas, resources, and support."
+  />
+  <meta
+    name="twitter:image"
+    content="https://medicaldepartment.org/md-logo.png"
+  />
+
+  <style>
+    :root {
+      --bg: #f4f8ff;
+      --card: #ffffff;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #38bdf8;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --shadow-soft: 0 12px 32px rgba(15, 23, 42, 0.08);
+      --shadow-strong: 0 18px 45px rgba(15, 23, 42, 0.14);
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #dbeafe 0%, #f9fbff 45%, #e0f2fe 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a.text-link {
+      color: var(--primary);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px 80px;
+    }
+
+    /* Header / Nav */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(241, 245, 255, 0.9);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.45);
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .pill {
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(37, 99, 235, 0.12);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1e3a8a;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      color: var(--muted);
+      transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+    }
+
+    nav a:hover {
+      background: rgba(191, 219, 254, 0.95);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      font-size: 0.85rem;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+      transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .nav-cta:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.55);
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.6fr);
+      gap: 32px;
+      padding-top: 32px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(59, 130, 246, 0.08);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.25rem, 3.3vw, 2.8rem);
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      max-width: 34rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: var(--radius-pill);
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--text);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .btn-ghost:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 26px;
+      padding: 20px 20px 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 12px;
+    }
+
+    .hero-card h2 {
+      font-size: 1rem;
+    }
+
+    .status-pill {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(34, 197, 94, 0.12);
+      color: #15803d;
+    }
+
+    .hero-logo-circle {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #ffffff, #dbeafe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.4);
+      margin-bottom: 10px;
+      margin-inline: auto;
+    }
+
+    .hero-logo-circle img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+
+    .hero-stat {
+      border-radius: 16px;
+      padding: 10px 10px 8px;
+      background: #f8fafc;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.8rem;
+    }
+
+    .hero-stat span {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .hero-stat strong {
+      font-size: 0.9rem;
+    }
+
+    .hero-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* Quick Links Bar */
+
+    .quick-links {
+      margin-top: 26px;
+    }
+
+    .quick-links-inner {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 999px;
+      padding: 8px 14px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.16);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .quick-links-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #6b7280;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e0f2fe;
+    }
+
+    .quick-links-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .ql-pill {
+      font-size: 0.82rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+    }
+
+    .ql-pill:hover {
+      background: #dbeafe;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+    }
+
+    /* Sections / Cards */
+
+    section {
+      margin-top: 40px;
+    }
+
+    .section-header {
+      margin-bottom: 14px;
+    }
+
+    .section-chip {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #1d4ed8;
+      margin-bottom: 4px;
+    }
+
+    .section-header h2 {
+      font-size: 1.35rem;
+      margin-bottom: 4px;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 0.9rem;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(59, 130, 246, 0.35);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .list {
+      padding-left: 18px;
+    }
+
+    .list li {
+      margin-bottom: 6px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .soft-pill {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      background: #e0f2fe;
+      color: #1d4ed8;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-lg);
+      padding: 12px 12px 10px;
+      background: #f9fafb;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.85rem;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+
+    .faq-item h3 {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.16);
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(191, 219, 254, 0.9);
+      color: #1d4ed8;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .two-col,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .nav-inner {
+        justify-content: space-between;
+      }
+
+      .quick-links-inner {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="logo">
+        <!-- Using your self-hosted logo -->
+        <img
+          src="/md-logo.png"
+          alt="SCPF Medical Division Logo"
+        />
+        <div>
+          <div class="logo-text-main">SCPF Medical Division</div>
+          <span class="pill">Information Hub</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#join">Join</a></li>
+          <li><a href="#guidelines">Guidelines</a></li>
+          <li><a href="#updates">Updates</a></li>
+          <li><a href="#guides">Guides</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#join" class="nav-cta">Apply to MD</a>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div>
+        <div class="hero-tag">
+          <span>SCPF</span>
+          <span>Medical Division</span>
+        </div>
+        <h1>Your central hub for everything Medical Division.</h1>
+        <p>
+          Official information hub for the SCPF Medical Division on Roblox.
+          Find guidelines, applications, quotas, resources, and support all in one place.
+        </p>
+        <div class="hero-actions">
+          <a href="#join" class="btn-primary">Apply to MD →</a>
+          <a href="#guidelines" class="btn-ghost">View Guidelines</a>
+          <a href="https://discord.gg/GWkEw9yxqM" class="btn-ghost" target="_blank">Join the Discord</a>
+        </div>
+        <p class="hero-meta">
+          Save this site. If you ever forget a rule, quota, or link, it lives here.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <div class="hero-logo-circle">
+            <img
+              src="/md-logo.png"
+              alt="SCPF Medical Division Logo"
+            />
+          </div>
+          <div class="hero-card-header">
+            <h2>Division Snapshot</h2>
+            <span class="status-pill">Applications Open</span>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--muted);">
+            Quick overview of current expectations and rewards for Medical Division personnel.
+          </p>
+          <div class="hero-grid">
+            <div class="hero-stat">
+              <span>Weekly quota</span>
+              <strong>30 mins on-site</strong>
+              <div style="font-size: 0.75rem; color: var(--muted);">
+                + 1 logged MD task
+              </div>
+            </div>
+            <div class="hero-stat">
+              <span>Application methods</span>
+              <strong>Form or /apply</strong>
+              <div style="font-size: 0.75rem; color: var(--muted);">
+                Use Google Form or <code>/apply</code> in #ai-interviews
+              </div>
+            </div>
+            <div class="hero-stat">
+              <span>Bonus reward</span>
+              <strong>200 Robux</strong>
+              <div style="font-size: 0.75rem; color: #16a34a;">
+                For eligible Nurses (see details below)
+              </div>
+            </div>
+            <div class="hero-stat">
+              <span>Roblox group</span>
+              <strong>Medical Division</strong>
+              <div style="font-size: 0.75rem; color: var(--muted);">
+                SCPF: Medical Division community
+              </div>
+            </div>
+          </div>
+          <p class="hero-note">
+            Reminder: Real life comes first. If you’re struggling with quota, communicate with Management instead of going silent.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Quick Links Pill Bar -->
+    <section class="quick-links">
+      <div class="quick-links-inner">
+        <span class="quick-links-label">Quick actions</span>
+        <div class="quick-links-pills">
+          <a href="#join" class="ql-pill">Apply to MD</a>
+          <a href="https://trello.com/b/j2jvme4Z/md-information-hub" target="_blank" class="ql-pill">
+            View Guidelines Trello
+          </a>
+          <a href="https://discord.gg/GWkEw9yxqM" target="_blank" class="ql-pill">Join Discord</a>
+          <a
+            href="https://www.roblox.com/communities/695368604/SCPF-Medical-Division"
+            target="_blank"
+            class="ql-pill"
+          >
+            Roblox Group
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-chip">Overview</span>
+        <h2>🩺 About the Medical Division</h2>
+        <p>What we do on-site and how we support the rest of the Foundation.</p>
+      </div>
+      <div class="card two-col">
+        <div>
+          <p>
+            The SCPF Medical Division is responsible for the physical and psychological wellbeing of personnel
+            across the facility. We operate under the “Secure, Contain, Protect” motto while prioritizing
+            professionalism and immersive roleplay.
+          </p>
+          <ul class="list" style="margin-top: 8px;">
+            <li>Emergency medical treatment and triage.</li>
+            <li>Routine check-ups, evaluations, and monitoring.</li>
+            <li>Managing infections, viruses, and anomaly-related injuries.</li>
+            <li>Psychological support, sanity checks, and counseling roleplay.</li>
+            <li>Assisting other divisions during incidents and breaches.</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 6px;">
+            Official links:
+          </p>
+          <ul class="list">
+            <li>
+              <strong>Roblox Group:</strong>
+              <a
+                class="text-link"
+                href="https://www.roblox.com/communities/695368604/SCPF-Medical-Division"
+                target="_blank"
+              >
+                SCPF Medical Division
+              </a>
+            </li>
+            <li>
+              <strong>Discord:</strong>
+              <a class="text-link" href="https://discord.gg/GWkEw9yxqM" target="_blank">
+                Medical Division Discord Server
+              </a>
+            </li>
+          </ul>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 10px;">
+            MD members are expected to act maturely and represent the Division positively both in-game and in Discord.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join -->
+    <section id="join">
+      <div class="section-header">
+        <span class="section-chip">Joining</span>
+        <h2>✅ How to Join the Medical Division</h2>
+        <p>Requirements, application links, and bonus rewards.</p>
+      </div>
+      <div class="card two-col">
+        <div>
+          <h3 style="font-size: 1rem; margin-bottom: 6px;">Basic Requirements</h3>
+          <ul class="list">
+            <li>Must be in the main Roblox SCPF community and follow all global rules.</li>
+            <li>Must be in the SCPF Medical Division Roblox group.</li>
+            <li>Professional and mature behavior on-site and in Discord.</li>
+            <li>Ability to follow instructions from Medical Division Management and higher ranks.</li>
+            <li>Willingness to meet the current weekly quota (30 minutes on-site + 1 MD task).</li>
+          </ul>
+          <p style="margin-top: 10px; font-size: 0.85rem; color: var(--muted);">
+            Low-effort, troll, or copied applications will be denied. Show effort, detail, and actual interest in the Division.
+          </p>
+        </div>
+        <div>
+          <h3 style="font-size: 1rem; margin-bottom: 6px;">Application Methods</h3>
+          <ol class="list">
+            <li>
+              <strong>Google Form:</strong> Fill out the official application form:
+              <a class="text-link" href="https://forms.gle/Rjef8PHUJ29oYMEU6" target="_blank">Click here</a>.
+            </li>
+            <li>
+              <strong>AI Interviews:</strong> In the Discord, go to <code>#ai-interviews</code> and use
+              <code>/apply</code> for instant, automated interview processing and faster entry.
+            </li>
+            <li>Wait for a response from staff via Discord and/or Roblox ranking.</li>
+          </ol>
+          <a
+            href="https://forms.gle/Rjef8PHUJ29oYMEU6"
+            class="btn-primary"
+            style="margin-top: 10px; display:inline-flex;"
+            target="_blank"
+          >
+            Open Application Form →
+          </a>
+          <a
+            href="https://discord.gg/GWkEw9yxqM"
+            class="btn-ghost"
+            style="margin-top: 8px; display:inline-flex; font-size:0.8rem;"
+            target="_blank"
+          >
+            Use /apply in #ai-interviews →
+          </a>
+        </div>
+      </div>
+
+      <!-- Bonus / payout info -->
+      <div class="card" style="margin-top: 16px; border-left: 4px solid #16a34a;">
+        <h3 style="font-size: 0.98rem; margin-bottom: 4px;">🎁 200 Robux Bonus for Nurses</h3>
+        <p style="font-size: 0.88rem;">
+          We offer a <strong>200 Robux bonus</strong> to dedicated members who:
+        </p>
+        <ul class="list" style="margin-top: 6px;">
+          <li>Reach the rank of <strong>Nurse</strong> in the Medical Division.</li>
+          <li>Remain in the Division for at least <strong>2 weeks</strong> after achieving Nurse.</li>
+          <li>Have <strong>no strikes</strong> on record during that time.</li>
+          <li>
+            Are in the payout group:
+            <a
+              class="text-link"
+              href="https://www.roblox.com/communities/451852407/SCPF-Outreach-Program#!/about"
+              target="_blank"
+            >
+              SCPF Outreach Program
+            </a>
+            at the time of payout.
+          </li>
+        </ul>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-top: 6px;">
+          Make sure you join the payout group early so there are no delays when you qualify.
+        </p>
+      </div>
+    </section>
+
+    <!-- Guidelines -->
+    <section id="guidelines">
+      <div class="section-header">
+        <span class="section-chip">Rules</span>
+        <h2>📘 Guidelines & Expectations</h2>
+        <p>Short overview of expectations. Full policy lives on our Trello board.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size: 0.95rem; margin-bottom: 8px;">Core Guidelines</h3>
+        <ul class="list">
+          <li><strong>Professionalism:</strong> No trolling, abuse of tools, or intentional disruption on-site or in Discord.</li>
+          <li><strong>Respect:</strong> Treat all players and staff respectfully—no harassment, slurs, or targeted toxicity.</li>
+          <li><strong>Activity:</strong> Meet your weekly quota unless you have an approved LOA or reduced quota.</li>
+          <li><strong>Roleplay Quality:</strong> Use consistent, immersive medical/psych roleplay that fits the SCPF setting.</li>
+          <li><strong>Chain of Command:</strong> Follow instructions from higher ranks and do not mini-mod or overstep your position.</li>
+        </ul>
+        <p style="margin-top: 10px; font-size: 0.85rem; color: var(--muted);">
+          Violations may result in warnings, strikes, suspension, or removal depending on severity and history.
+        </p>
+        <a
+          href="https://trello.com/b/j2jvme4Z/md-information-hub"
+          class="btn-ghost"
+          style="margin-top: 10px; display:inline-flex;"
+          target="_blank"
+        >
+          Open Full Guidelines Trello →
+        </a>
+      </div>
+    </section>
+
+    <!-- Updates -->
+    <section id="updates">
+      <div class="section-header">
+        <span class="section-chip">Announcements</span>
+        <h2>📢 Updates & Announcements</h2>
+        <p>Recent changes to quotas, policies, and resources.</p>
+      </div>
+      <div class="card">
+        <!-- Edit these entries as things change -->
+        <p><span class="badge">[11/16/2025]</span> <strong>Quota Update</strong><br>
+          Quota has been updated to <strong>30 minutes on-site</strong> and <strong>1 task per week</strong>. Make sure you log your tasks properly.
+        </p>
+        <br />
+        <p><span class="badge">[10/22/2025]</span> <strong>AI Interviews</strong><br>
+          You can now use <code>/apply</code> in <code>#ai-interviews</code> in the Discord for instant automated interviews and faster entry into the Division.
+        </p>
+        <br />
+        <p><span class="badge">[11/20/2025]</span> <strong>Guideline Updates</strong><br>
+          The Trello “MD Information Hub” has been updated. Review it regularly for any new procedures or rule changes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Guides -->
+    <section id="guides">
+      <div class="section-header">
+        <span class="section-chip">Resources</span>
+        <h2>📚 Helpful Guides & Resources</h2>
+        <p>Training, procedures, and reference material for MD members.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3 style="font-size: 0.95rem; margin-bottom: 6px;">New Member Basics</h3>
+          <ul class="list">
+            <li>How to spawn and use MD tools.</li>
+            <li>Uniforms, IDs, and basic behavior.</li>
+            <li>Where to go on-site and who to report to.</li>
+          </ul>
+          <!-- Replace with your real doc if/when you have one -->
+          <a href="#" class="btn-ghost" style="margin-top: 8px; display:inline-flex; font-size:0.8rem;">
+            (Coming soon) New Member Guide
+          </a>
+        </div>
+        <div class="card">
+          <h3 style="font-size: 0.95rem; margin-bottom: 6px;">Medical & Virus Procedures</h3>
+          <ul class="list">
+            <li>Standard check-up procedure.</li>
+            <li>Infection / virus containment protocol.</li>
+            <li>Emergency response during breaches.</li>
+          </ul>
+          <a href="#" class="btn-ghost" style="margin-top: 8px; display:inline-flex; font-size:0.8rem;">
+            (Coming soon) Procedures Guide
+          </a>
+        </div>
+        <div class="card">
+          <h3 style="font-size: 0.95rem; margin-bottom: 6px;">Psych & Sanity</h3>
+          <ul class="list">
+            <li>How to handle low sanity roleplay.</li>
+            <li>Psych evaluations and counseling scenes.</li>
+            <li>Escalation paths and when to call Management.</li>
+          </ul>
+          <a href="#" class="btn-ghost" style="margin-top: 8px; display:inline-flex; font-size:0.8rem;">
+            (Coming soon) Psych Guide
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-header">
+        <span class="section-chip">Help</span>
+        <h2>❓ Frequently Asked Questions</h2>
+        <p>Quick answers to common questions about the Division.</p>
+      </div>
+      <div class="grid-2">
+        <div class="faq-item">
+          <h3>How long do applications take?</h3>
+          <p>
+            This depends on staff activity and how you applied. <code>/apply</code> in <code>#ai-interviews</code> is
+            immediate results. If you use the Google Form please allow up to <strong>[2 days]</strong> and avoid spamming staff about your application.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>My rank didn’t update after acceptance.</h3>
+          <p>
+            Contact Management with proof (e.g. acceptance screenshot) so we can
+            update your rank in the Roblox group.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>What if I can’t meet quota?</h3>
+          <p>
+            Real life comes first. Contact Management to request LOA or a temporary reduced quota instead of just
+            disappearing. Communication matters more than perfection.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I be in other divisions too?</h3>
+          <p>
+            Yes, you can be in multiple sub-divisons within the Medical Department but each may have seperater activity requirements.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Do I have to use voice chat?</h3>
+          <p>
+            No. However, management may use VC for trainings to make it easier.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Who do I talk to if I have an issue?</h3>
+          <p>
+            Contact a member of Medical Division Management. Include details
+            and screenshots so we can actually help.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-header">
+        <span class="section-chip">Support</span>
+        <h2>📨 Contact & Support</h2>
+        <p>Where to go when you need help, have questions, or want to report something.</p>
+      </div>
+      <div class="card">
+        <p>
+          The Discord server is the main place for announcements, tickets, and direct contact with Medical Division
+          Management.
+        </p>
+        <ul class="list" style="margin-top: 8px;">
+          <li>
+            <strong>Discord:</strong>
+            <a class="text-link" href="https://discord.gg/GWkEw9yxqM" target="_blank">
+              Join the Medical Division Discord
+            </a>
+          </li>
+          <li><strong>Tickets:</strong> Use the ticket channels for reports, rank issues, or application questions.</li>
+          <li><strong>Management:</strong> For serious concerns, DM or mention the appropriate MD Management roles.</li>
+        </ul>
+        <div style="margin-top: 10px; display:flex; flex-wrap:wrap; gap:8px;">
+          <a href="https://discord.gg/GWkEw9yxqM" class="btn-primary" target="_blank">Join Discord →</a>
+          <a
+            href="https://www.roblox.com/communities/695368604/SCPF-Medical-Division"
+            class="btn-ghost"
+            target="_blank"
+          >
+            View Roblox Group →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      SCPF Medical Division Hub &copy; 2025.
+    </footer>
+  </main>
+</body>
+</html>
