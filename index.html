@@ -525,54 +525,6 @@
       border-color: rgba(59, 130, 246, 0.4);
     }
 
-    /* Guidelines */
-    .guideline-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .guideline-link {
-      font-size: 0.85rem;
-      padding: 8px 12px;
-      border-radius: var(--radius-pill);
-      background: #eff6ff;
-      color: #1d4ed8;
-      border: 1px solid rgba(129, 140, 248, 0.35);
-      transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.12s ease;
-    }
-
-    .guideline-link:hover {
-      background: #dbeafe;
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
-    }
-
-    .guideline-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
-    }
-
-    .guideline-card h3 {
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
-
-    .guideline-card p {
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .guideline-card ul {
-      padding-left: 18px;
-    }
-
-    .guideline-card li {
-      margin-bottom: 6px;
-    }
-
     .badge {
       display: inline-block;
       font-size: 0.7rem;
@@ -734,7 +686,9 @@
         <span class="quick-links-label">Quick actions</span>
         <div class="quick-links-pills">
           <a href="#join" class="ql-pill">Apply to MD</a>
-          <a href="#guidelines" class="ql-pill">View Guidelines</a>
+          <a href="https://trello.com/b/j2jvme4Z/md-information-hub" target="_blank" class="ql-pill">
+            View Guidelines Trello
+          </a>
           <a href="https://discord.gg/GWkEw9yxqM" target="_blank" class="ql-pill">Join Discord</a>
           <a
             href="https://www.roblox.com/communities/695368604/SCPF-Medical-Division"
@@ -884,85 +838,28 @@
       <div class="section-header">
         <span class="section-chip">Rules</span>
         <h2>📘 Guidelines & Expectations</h2>
-        <p>
-          Full Medical Division guidelines hosted on-site for quick reference. Use the shortcuts below to jump to each section.
+        <p>Short overview of expectations. Full policy lives on our Trello board.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size: 0.95rem; margin-bottom: 8px;">Core Guidelines</h3>
+        <ul class="list">
+          <li><strong>Professionalism:</strong> No trolling, abuse of tools, or intentional disruption on-site or in Discord.</li>
+          <li><strong>Respect:</strong> Treat all players and staff respectfully—no harassment, slurs, or targeted toxicity.</li>
+          <li><strong>Activity:</strong> Meet your weekly quota unless you have an approved LOA or reduced quota.</li>
+          <li><strong>Roleplay Quality:</strong> Use consistent, immersive medical/psych roleplay that fits the SCPF setting.</li>
+          <li><strong>Chain of Command:</strong> Follow instructions from higher ranks and do not mini-mod or overstep your position.</li>
+        </ul>
+        <p style="margin-top: 10px; font-size: 0.85rem; color: var(--muted);">
+          Violations may result in warnings, strikes, suspension, or removal depending on severity and history.
         </p>
-      </div>
-      <div class="guideline-nav">
-        <a class="guideline-link" href="#professionalism">Professionalism</a>
-        <a class="guideline-link" href="#respect">Respect</a>
-        <a class="guideline-link" href="#activity">Activity & Quota</a>
-        <a class="guideline-link" href="#roleplay">Roleplay Quality</a>
-        <a class="guideline-link" href="#chain">Chain of Command</a>
-        <a class="guideline-link" href="#enforcement">Enforcement</a>
-      </div>
-
-      <div class="guideline-grid">
-        <div class="card guideline-card" id="professionalism">
-          <h3>Professionalism</h3>
-          <p>Represent the Medical Division with maturity in-game, on Discord, and during trainings.</p>
-          <ul>
-            <li>No trolling, exploiting, or intentionally disrupting operations.</li>
-            <li>Use MD tools, equipment, and permissions only for their intended purpose.</li>
-            <li>Follow Roblox and facility rules; avoid behavior that could lead to platform moderation.</li>
-            <li>Keep communications clear and concise during incidents; avoid excessive spam or memes on duty.</li>
-          </ul>
-        </div>
-
-        <div class="card guideline-card" id="respect">
-          <h3>Respect</h3>
-          <p>Maintain a welcoming environment for patients, staff, and visitors.</p>
-          <ul>
-            <li>No harassment, slurs, targeted toxicity, or personal attacks.</li>
-            <li>Be patient with newer players and offer guidance instead of mockery.</li>
-            <li>Resolve conflicts through staff channels rather than public arguments.</li>
-            <li>Keep RP consent in mind—if someone is uncomfortable, adjust or escalate to Management.</li>
-          </ul>
-        </div>
-
-        <div class="card guideline-card" id="activity">
-          <h3>Activity & Quota</h3>
-          <p>Meet expectations so the department stays reliable for the site.</p>
-          <ul>
-            <li>Weekly quota: <strong>30 minutes on-site</strong> and <strong>1 logged MD task</strong>.</li>
-            <li>Request LOA or a reduced quota before absences; communicate early when possible.</li>
-            <li>Repeated quota misses without notice may lead to strikes, demotion, or removal.</li>
-            <li>Stay in required Roblox groups to receive payouts or role adjustments.</li>
-          </ul>
-        </div>
-
-        <div class="card guideline-card" id="roleplay">
-          <h3>Roleplay Quality</h3>
-          <p>Keep scenarios immersive and aligned with SCPF standards.</p>
-          <ul>
-            <li>Use clear medical/psych terminology and avoid lore-breaking actions.</li>
-            <li>Do not self-inject storylines that derail ongoing operations or security efforts.</li>
-            <li>For psych scenes, prioritize player comfort and avoid graphic or sensitive content without consent.</li>
-            <li>Log significant incidents (containment breaches, virus events, major treatments) per procedure.</li>
-          </ul>
-        </div>
-
-        <div class="card guideline-card" id="chain">
-          <h3>Chain of Command</h3>
-          <p>Follow leadership direction and respect boundaries.</p>
-          <ul>
-            <li>Obey instructions from higher ranks and event hosts while on duty.</li>
-            <li>Avoid mini-modding or overruling peers unless you have authority to do so.</li>
-            <li>Escalate security or disciplinary issues to MD Management or the hosting division.</li>
-            <li>Coordinate with other divisions during incidents instead of acting independently.</li>
-          </ul>
-        </div>
-
-        <div class="card guideline-card" id="enforcement">
-          <h3>Enforcement</h3>
-          <p>Consequences scale with severity and history.</p>
-          <ul>
-            <li>Verbal reminders for first-time, low-impact mistakes.</li>
-            <li>Formal warnings or strikes for repeated issues or moderate disruptions.</li>
-            <li>Suspension or removal for severe misconduct, harassment, or willful rule-breaking.</li>
-            <li>Appeals can be directed to MD Management with supporting context or evidence.</li>
-          </ul>
-        </div>
+        <a
+          href="https://trello.com/b/j2jvme4Z/md-information-hub"
+          class="btn-ghost"
+          style="margin-top: 10px; display:inline-flex;"
+          target="_blank"
+        >
+          Open Full Guidelines Trello →
+        </a>
       </div>
     </section>
 
@@ -984,8 +881,7 @@
         </p>
         <br />
         <p><span class="badge">[11/20/2025]</span> <strong>Guideline Updates</strong><br>
-          On-site guidelines now include the full policy text. Review the <a class="text-link" href="#guidelines">Guidelines</a>
-          section for any new procedures or rule changes.
+          The Trello “MD Information Hub” has been updated. Review it regularly for any new procedures or rule changes.
         </p>
       </div>
     </section>
